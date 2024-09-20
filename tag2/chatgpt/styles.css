@@ -1,0 +1,51 @@
+body {
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #d7dad7; /* Background color of the poster */
+}
+
+.poster {
+    display: grid;
+    grid-template-columns: repeat(4, 100px);
+    grid-template-rows: repeat(4, 100px);
+    gap: 10px;
+    transform: rotate(-45deg);
+}
+
+.block {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    font-family: 'Arial', sans-serif;
+    font-weight: bold;
+    color: white;
+    font-size: 12px;
+}
+
+.teal {
+    background-color: #00aba7;
+}
+
+.pink {
+    background-color: #ed3a96;
+}
+
+.black {
+    background-color: #000000;
+    color: white;
+}
+
+.big-text {
+    font-size: 36px;
+    text-transform: uppercase;
+    color: #000000;
+    background-color: #d7dad7;
+}
+
+.rotate-text {
+    transform: rotate(45deg);
+}

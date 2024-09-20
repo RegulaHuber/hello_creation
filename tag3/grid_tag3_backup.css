@@ -1,0 +1,92 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    overflow: hidden;
+    background-color: white;
+
+   
+}
+
+@font-face {
+    font-family: "BasicCommercialLT-Black";
+    src: url("BasicCommercialLT-Black.woff2") format("woff2");
+}
+
+p{font-family: "BasicCommercialLT-Black";
+font-size: 80px;
+
+
+}
+
+.textInBox{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.skew{
+transform:skewX(10deg); 
+}
+
+.grid-container {
+    display: grid;
+    grid-template-columns: repeat(60, 1fr); /* Adjust number of columns based on the layout */
+    grid-template-rows: repeat(60, 1fr);   /* Adjust number of rows based on the layout */
+    gap: 5px; /* Spacing between the blocks */
+    width: 8000px;
+    height: 8000px;
+
+    position:absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%)
+    rotate(-45deg) ;
+    background-color: white;
+}
+
+
+.yellow {
+    background-color: yellow;
+}
+
+.pink {
+    background-color: #d52c77;
+}
+
+.cyan {
+    background-color: #55c5a9;
+}
+
+.black {
+    background-color: #000;
+}
+
+.small {
+    grid-column: span 1;
+}
+
+.medium {
+    grid-column: span 2;
+}
+
+.large {
+    grid-column: span 3;
+}
+
+.block:hover {
+    background-color: #ffffff;
+}
+
+.block {
+    transition: 0.5s all ease-in-out;
+}
+
+.transformBig{
+transform: translate(0px, 0px) rotate(0deg);
+}
+
+/* Add more classes to match the sizes of the blocks in the layout */

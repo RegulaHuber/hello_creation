@@ -1,0 +1,63 @@
+/*
+
+display: grid
+
+grid-template-rows
+grid-template-columns
+grid-template
+
+grid-row-start
+grid-column-start
+grid-row-end
+grid-column-end
+grid-area
+
+gap
+
+*/
+
+body{overflow: hidden;}
+
+.grid {
+    width: 100vw;
+    height: 100vh;
+    display: grid;
+    grid-template-rows: repeat(10, 10%);
+    /*grid-template-rows:25% 25% 25% 25%;*/
+    grid-template-columns: repeat(10, 10%);
+    /*transform: rotate(-45deg);*/
+    position:absolute;
+    top: -80px;
+    left: -100px;
+    gap: 10px;
+
+
+}
+
+.together {
+    grid-column-start: span 2;
+    background-color: blueviolet;
+}
+
+
+.item {
+    background-color: green;
+    /*grid-area: 3 / 3 / 4 / 5;  Start Reihe, Start Zeile, Ende Reihe, Ende Zeile*/
+}
+
+.quadrat{
+ 
+    background-color: blueviolet;
+}
+
+.square
+{
+  background-color: yellow;
+  width: 100%;
+  height: 90px;
+
+}
+
+.grid-image {
+    width: 100%; height: 100%;
+}

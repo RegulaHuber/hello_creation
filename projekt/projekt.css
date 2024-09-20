@@ -1,0 +1,119 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    overflow: hidden;
+}
+
+@font-face {
+    font-family: "BasicCommercialLT-Black";
+    src: url("BasicCommercialLT-Black.woff2") format("woff2");
+}
+
+p {
+    font-family: "BasicCommercialLT-Black";
+    font-size: 90px;
+    transform: translate(0px, 25px);
+}
+
+.textSmall {
+    font-family: "BasicCommercialLT-Black";
+    font-size: 17px;
+}
+
+.textInBox {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.centerTextInBox {
+    align-items: center;
+    padding: 10px 10px 10px 20px;
+}
+
+.grid-container {
+    display: grid;
+    grid-template-columns: repeat(60, 1fr);
+    grid-template-rows: repeat(60, 1fr);
+    gap: 5px;
+    width: 8000px;
+    height: 8000px;
+
+    position: absolute;
+    top: 60%;
+    left: 50%;
+    transform: translate(-50%, -50%) rotate(-45deg);
+    transition: ease all .5s;
+}
+
+/* FARBEN */
+
+.yellow {
+    background-color: yellow;
+}
+
+.white {
+    background-color: white;
+}
+
+.pink {
+    background-color: #d52c77;
+}
+
+.cyan {
+    background-color: #55c5a9;
+}
+
+.black {
+    background-color: #000;
+}
+
+/* ZELLEN GRÖSSEN */
+
+.small {
+    grid-column: span 1;
+}
+
+.medium {
+    grid-column: span 2;
+}
+
+.large {
+    grid-column: span 3;
+}
+
+.block:hover {
+    background-color: #ffffff;
+}
+
+.block {
+    transition: 0.5s all ease-in-out;
+}
+
+@media (max-width: 640px) {  
+    .grid-container {
+        display: grid;
+        grid-template-columns: repeat(60, 1fr);
+        grid-template-rows: repeat(60, 1fr);
+        gap: 10px;
+        width: 8000px;
+        height: 8000px;
+    
+        position: absolute;
+        top: 50%;
+        left: 70%;
+        transform: translate(-50%, -50%) rotate(-90deg)
+        scale(75%);
+
+    }
+
+
+}
+
+
+
+/* Add more classes to match the sizes of the blocks in the layout */

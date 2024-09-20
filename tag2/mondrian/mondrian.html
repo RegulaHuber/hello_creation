@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            /*hauptachse*/
+            align-items: center;
+            height: 100vh;
+            background-color: rgb(35, 31, 31);       
+         }
+
+         body {
+            margin: 0;}
+
+        #wrapper {
+            width: 600px;
+            height: 600px;
+            display: flex;
+        }
+
+        .spalte_links {
+            width: 50%;
+            height: 100%;
+            background-color: rgb(168, 42, 42);
+  
+        }
+
+        .hoehe_2_5 {
+            height: 40%;
+        }
+
+        .hoehe_1_5 {
+            height: 20%;
+        }
+
+        .blue{background-color: blue;}
+        .red{background-color: red;}
+        .white{background-color: white;}
+        .yellow{background-color: yellow;}
+        .black{background-color: black;}
+
+        .spalte_rechts {
+            width: 50%;
+            height: 100%;
+
+        }
+
+        .flex{
+            display: flex;
+            justify-content: space-around;
+        }
+
+        .breite_50{
+            width: 50%;
+        }
+
+        div{border: 1px solid;
+        }
+
+
+
+    </style>
+
+</head>
+
+<body>
+    <div id="wrapper">
+
+        <div class="spalte_links">
+            <div class="hoehe_2_5 blue"></div>
+            <div class="hoehe_2_5 red"></div>
+            <div class="hoehe_1_5 white"></div>
+
+
+        </div>
+
+        <div class="spalte_rechts">
+
+            <div class="hoehe_1_5 flex">
+                <div class="yellow breite_50"></div>
+                <div class="black breite_50"></div>
+            </div>
+            <div class="hoehe_1_5 yellow"></div>
+            <div class="hoehe_1_5 black"></div>
+            <div class="hoehe_1_5 white"></div>
+            <div class="hoehe_1_5 white"></div>
+
+        </div>
+
+
+
+    </div>
+</body>
+
+</html>
