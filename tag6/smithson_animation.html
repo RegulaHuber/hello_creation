@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Smithson</title>
+
+    <style>
+        body {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+
+        .group {
+            display: grid;
+            grid-template-columns: 1fr;
+            grid-template-rows: 1fr;
+            align-self: center;
+        }
+
+        .child {
+            grid-column: 1 / 2;
+            grid-row: 1 / 2;
+            mix-blend-mode: multiply;
+
+            font-size: 50vw;
+            font-weight: 900;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+
+        .magenta {
+            color: magenta;
+            animation-name: buchstabelinks;
+            animation-duration: 5s;
+            animation-timing-function: ease-in-out;
+            animation-iteration-count: 2;
+            /* infinit */
+            animation-delay: 0ms;
+            animation-fill-mode: forwards; /* Animation bleibt am Ende stehen bei 100%*/
+            animation-range-end: 80%;
+        }
+
+        .yellow {
+            color: yellow;
+            
+        }
+
+        .blue {
+            color: cyan;
+        }
+
+        /* Animation entwerfen */
+
+        @keyframes buchstabelinks {
+            0% {
+                transform: translate(0, 0)
+            }
+
+            33% {
+                transform: translate(50px, 0)
+            }
+
+            66% {
+                transform: translate(50px, 50px)
+            }
+
+            100% {
+                transform: translate(0px, 50px)
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="group">
+        <div class="child magenta buchstabelinks">
+            S
+        </div>
+        <div class="child yellow">
+            S
+        </div>
+        <div class="child blue">
+            S
+        </div>
+    </div>
+</body>
+
+</html>

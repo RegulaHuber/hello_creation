@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+.group{
+    display:grid;
+    grid-template-columns: 1fr; 
+    grid-template-rows: 1fr; 
+}
+
+.group:hover .verschieben{
+    transform: translate(30px, 50px);
+    transition-property: all;
+    transition-duration: 0.5s;
+    transition-timing-function: ease-in-out;
+
+}
+
+/* beide elemente liegen ursprünglich übereinander */
+.not_transformed,
+.transformed {
+    grid-column: 1 / 2;
+    grid-row: 1 / 2;
+    height: 400px;
+    width: 400px;
+}
+/* zur visuellen unterscheidung zwei unterschiedliche stile zuweisen */
+        
+.not_transformed {
+    background-color: black;
+}
+.transformed {
+    background-color: rgba(0, 0, 255, 0.5);
+}
+
+/* Transformationen */
+
+.verschieben {
+    transform:translate(100px, 200px);
+}
+
+.rotieren{transform: rotate(45deg);
+/* Beispiel linke obere Ecke*/
+transform-origin: top left;
+/* Beispiel linke obere Ecke*/
+transform-origin: 50px 50px;
+
+}
+
+.skalieren{
+    transform:scale(0.8); 
+  /*Beispiel beide Achsen unterschiedlich skaliert*/
+  transform:scale(0.8, 2);
+}
+
+.skew{
+    transform:skewX(-40deg); 
+    /*transform:skew(20deg, 10deg);*/
+}
+
+.transformed { 
+    height: 500px; 
+    background-color:lightblue; 
+    transition-property: all;
+    transition-duration: 0.5s;
+    transition-timing-function: ease; /* cubic-bezier(.48,1.8,.56,-1.22);*/
+    transition-delay: 0s; /* verspäteter Start der Animation */
+    
+} 
+
+.transformed:hover{ 
+    /* Veränderter Zustand */
+    background-color:black; 
+    transform: translate(100px, 200px);
+}
+
+
+
+
+    </style>
+</head>
+<body>
+
+    <section>
+        <h1>Verschieben</h1>
+        <div class="group">
+            <div class="not_transformed">
+            </div>
+            <div class="transformed verschieben">
+            </div>
+        </div>
+    </section>
+
+    <section>
+        <h1>Rotieren</h1>
+        <div class="group">
+            <div class="not_transformed">
+            </div>
+            <div class="transformed rotieren">
+            </div>
+        </div>
+    </section>
+
+    <section>
+        <h1>Skalieren</h1>
+        <div class="group">
+            <div class="not_transformed" style="transform:scale(0.9)"> <!-- Transformation schnell getestet im HTML-Bereich -->
+            </div>
+            <div class="transformed skalieren">
+            </div>
+        </div>
+    </section>
+
+    <section>
+        <h1>Skew</h1>
+        <div class="group">
+            <div class="not_transformed">
+            </div>
+            <div class="transformed skew">
+            </div>
+        </div>
+    </section>
+
+    
+
+</body>
+</html>

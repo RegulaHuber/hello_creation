@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        .group {
+            display: grid;
+            grid-template-columns: 1fr;
+            grid-template-rows: 1fr;
+        }
+
+        /* beide elemente liegen ursprünglich übereinander */
+        .not_transformed,
+        .transformed {
+            grid-column: 1 / 2;
+            grid-row: 1 / 2;
+            height: 400px;
+            width: 400px;
+        }
+
+        /* zur visuellen unterscheidung zwei unterschiedliche stile zuweisen */
+
+        .not_transformed {
+            background-color: black;
+        }
+
+        .transformed {
+            background-color: rgba(0, 0, 255, 0.5);
+        }
+
+        /*----Transformationen-----*/
+        .verschieben{
+            transition-property: all;
+            transition-duration: 1s;
+            transition-timing-function: ease-in-out;
+        }
+        .verschieben:hover{
+            transform: translate(100px, 200px);     
+        }
+
+        .rotieren {
+            transform: rotate(45deg);
+        }
+
+        .mehrere {
+
+            transform: rotate(45deg) scale(0.8);
+
+        }
+
+        /*----Test Transition--------*/
+       /* .transformed {
+            height: 500px;
+            background-color: lightblue;
+            transition-property: all;
+            transition-duration: 2s;
+            transition-timing-function: cubic-bezier(.11,1.31,1,-0.41);
+            transition-delay: 0.5s;
+
+        }
+
+        .transformed:hover {
+            
+            background-color: black;
+            transform: translate(100px, 200px);
+        }*/
+    </style>
+</head>
+
+<body>
+    <section>
+        <h1>Verschieben</h1>
+        <div class="group">
+            <div class="not_transformed">
+            </div>
+            <div class="transformed verschieben">
+            </div>
+        </div>
+    </section>
+
+    <section>
+        <h1>Rotation</h1>
+        <div class="group">
+            <div class="not_transformed">
+            </div>
+            <div class="transformed rotieren">
+            </div>
+        </div>
+    </section>
+
+    <section></section>
+    <h1>Kombination</h1>
+    <div class="group">
+        <div class="not_transformed">
+        </div>
+        <div class="transformed mehrere">
+        </div>
+    </div>
+    </section>
+</body>
+
+</html>

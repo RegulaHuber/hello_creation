@@ -8,6 +8,7 @@ body {
     overflow: hidden;
     width: 100vw;
     height: 100vh;
+    background-color: black;
 }
 
 /* SCHRIFTBLÖCKE */
@@ -67,6 +68,24 @@ a {
     transform: translate(-50%, -50%) rotate(-45deg);
     transition: ease all .5s;
     /*sanfter Übergang von Desktop zu Mobile*/
+
+
+    animation-name: "hintergrund";
+    animation-duration: 10s;
+    animation-fill-mode: forwards;
+}
+
+
+
+@keyframes hintergrund {
+    0% {
+        background-color: black;
+    }
+
+    100% {
+        background-color: white;
+    }
+
 }
 
 /* FARBEN */
@@ -76,12 +95,25 @@ a {
 }
 
 .white {
-    background-color: white;
 }
 
 .pink {
     background-color: #d52c77;
 }
+
+.pink:nth-of-type(3n) {
+    opacity: 0;
+}
+
+.black:nth-of-type(2n) {
+    opacity: 0;
+}
+
+.cyan:nth-of-type(4n) {
+    opacity: 0;
+}
+
+/*Rhytmus / NEGATIV-Version erstellen*/
 
 .cyan {
     background-color: #55c5a9;
