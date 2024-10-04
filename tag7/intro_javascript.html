@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #element {
+            position: absolute;
+            top: 200px;
+            left: 0px;
+            border: 1px solid black;
+            width: 100px;
+            height: 100px;
+        }
+
+        .random {
+            background-color: blue;
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+        }
+
+        body {
+            height: 200vh;
+        }
+
+        @keyframes anim {
+            0% {
+                box-shadow: 0px 0px 8px 8px #e803ba;
+            }
+
+            25% {
+                box-shadow: 0px 0px 0px 8px #e803ba, 0px 0px 8px 16px #e8035b;
+                background-color: #03e8ba;
+            }
+
+            50% {
+                box-shadow: 0px 0px 0px 8px #e803ba, 0px 0px 0px 16px #e84803, 0px 0px 8px 24px #e85f03;
+                background-color: #038ce8;
+            }
+
+            75% {
+                box-shadow: 0px 0px 0px 8px #e803ba, 0px 0px 0px 16px #e84803, 0px 0px 0px 24px #e85f03, 0px 0px 8px 32px #e8a303;
+            }
+        }
+
+
+        #kreis2 {
+            border-radius: 50%;
+            width: 400px;
+            height: 400px;
+            background-color: #000506;
+            animation-name: anim;
+            animation-duration: 2s;
+            animation-iteration-count: 2;
+            animation-fill-mode: forwards;
+            animation-play-state: paused;
+        }
+
+        .heart {
+            position: relative;
+            width: 100px;
+            height: 100px;
+            background-color: red;
+            transform: rotate(-45deg);
+        }
+
+        .heart::before,
+        .heart::after {
+            content: '';
+            position: absolute;
+            width: 100px;
+            height: 100px;
+            background-color: red;
+            border-radius: 50%;
+        }
+
+        .heart::before {
+            top: -50px;
+            left: 0;
+        }
+
+        .heart::after {
+            left: 50px;
+            top: 0;
+        }
+
+        .cursorFollower {
+            position: fixed;
+            width: 2rem;
+            height: 2rem;
+            border: 2px solid black;
+            border-radius: 50%;
+            transform: translate(-50%, -50%);
+            transition: transform 0.3s;
+            mix-blend-mode: difference;
+            z-index: 999;
+            pointer-events: none;
+        }
+
+        .cursorFollowerDot {
+            position: fixed;
+            width: 2rem;
+            height: 2rem;
+            background: red;
+            border-radius: 50%;
+            transform: translate(-50%, -50%);
+            transform: rotate(-45deg);
+            transition: transform 0.3s;
+            mix-blend-mode: difference;
+            z-index: 999;
+            pointer-events: none;
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Alert-Box wird aufgerufen -->
+    <script>
+        // alert('hallo seite geladen');
+    </script>
+
+    <div id="element"></div>
+
+    <div id="kreis2"></div>
+
+    <div class="heart"></div>
+
+    <button class="specialbutton" onclick="buttonPressed()">Vorwärts bewegen</button>
+
+    <button class="specialbutton" onclick="neuesElement()">Erzeugt Kreis</button>
+    <!-- Empfehlung Javascript im Body am Schluss einbinden, da noch nicht alle Elemente geladen sind ansonsten -->
+
+    <button class="specialbutton" onclick="starteAnimation()">Start Animation</button>
+
+
+    <span id="cursorFollower" class="cursorFollower"></span>
+    <span id="cursorFollowerDot" class="cursorFollowerDot">
+
+
+        <script src="main.js"></script>
+
+</body>
+
+</html>

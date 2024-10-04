@@ -8,23 +8,79 @@ body {
     overflow: hidden;
     width: 100vw;
     height: 100vh;
-    background-color: black;
+
 }
+
+
 
 /* SCHRIFTBLÖCKE */
 
-p {
+.titel {
     font-family: "Roboto";
     font-weight: 600;
-    font-size: 104px;
-    transform: translate(0px, 22px);
+    font-size: 60px;
+    letter-spacing: 5px;
+    transform: translate(0px, 0px);
+}
+
+.regula {
+    animation-name: regula;
+    animation-duration: 10s;
+    animation-timing-function: ease;
+    animation-iteration-count: infinite;
+}
+
+.huber {
+    animation-name: huber;
+    animation-duration: 10s;
+    animation-timing-function: ease;
+    animation-iteration-count: infinite;
+}
+
+
+
+
+@keyframes regula {
+    0% {
+        letter-spacing: 5px;
+        font-size: 50px;
+    }
+
+    50% {
+        letter-spacing: 10px;
+        font-size: 75px;
+    }
+
+    100% {
+        letter-spacing: 5px;
+        font-size: 50px;
+    }
+}
+
+@keyframes huber {
+    0% {
+        letter-spacing: 10px;
+        font-size: 75px;
+    }
+
+    50% {
+        letter-spacing: 5px;
+        font-size: 50px;
+    }
+
+    100% {
+        letter-spacing: 10px;
+        font-size: 75px;
+    }
 }
 
 .textSmall {
     font-family: "Roboto";
-    font-weight: 700;
-    font-size: 20px;
-    text-align: left;
+    color: white;
+    font-weight: 500;
+    font-size: 26px;
+    letter-spacing: 3px;
+
 }
 
 .fontLight {
@@ -40,19 +96,21 @@ p {
 }
 
 .centerTextInBox {
+    justify-content: center;
     align-items: center;
-    padding: 20px 20px 20px 15px;
+    padding: 20px 20px 20px 20px;
 }
 
 /* HYPERLINK */
 
 a {
-    color: black;
+    color: turkis;
     text-decoration: none;
     /* no underline */
 }
 
 /* HAUPTCONTAINER */
+
 
 .grid-container {
     display: grid;
@@ -69,58 +127,68 @@ a {
     transition: ease all .5s;
     /*sanfter Übergang von Desktop zu Mobile*/
 
-
-    animation-name: hintergrund;
-    animation-duration: 10s;
-    animation-fill-mode: forwards;
 }
 
 
-
-@keyframes hintergrund {
-    0% {
-        background-color: black;
-    }
-
-    100% {
-        background-color: white;
-    }
-
-}
 
 /* FARBEN */
 
-.yellow {
-    background-color: yellow;
-}
 
-.white {
-}
+.white {}
 
 .pink {
-    background-color: #d52c77;
+    background: linear-gradient(90deg, rgba(192, 40, 64, 0.2) 0%, rgba(234, 67, 80, 0.1) 100%);
 }
 
-.pink:nth-of-type(3n) {
-    opacity: 0;
+/* Felder durchsichtig machen */
+
+/* .pink:nth-of-type(3n) {
+    background-color: white;
 }
 
-.black:nth-of-type(2n) {
-    opacity: 0;
+.turkis:nth-of-type(2n) {
+    background-color: white;
 }
 
-.cyan:nth-of-type(4n) {
-    opacity: 0;
+.yellow:nth-of-type(4n) {
+    background-color: white;
+} */
+
+
+
+.block1,
+.block2,
+.block3 {
+    background: linear-gradient(274deg, #66d2f2, rgb(71, 107, 165));
+    background-size: 300% 300%;
+    animation: verlaufAnimation 5s ease infinite;
 }
 
-/*Rhytmus / NEGATIV-Version erstellen*/
+@keyframes verlaufAnimation {
+    0% {
+        background-position: 90% 0%
+    }
 
-.cyan {
-    background-color: #55c5a9;
+    50% {
+        background-position: 20% 100%
+    }
+
+    100% {
+        background-position: 90% 0%
+    }
 }
 
-.black {
-    background-color: #000;
+
+
+
+.yellow {
+    background-color: hsl(0, 0%, 90%);
+    background: linear-gradient(90deg, rgb(192, 157, 40, 0.2) 0%, rgba(234, 167, 67, 0.3) 100%);
+}
+
+.turkis {
+    background-color: hsl(0, 0%, 90%);
+    background: linear-gradient(90deg, rgb(54, 156, 131, 0.5) 0%, rgb(64, 188, 172, 0.3) 100%);
 }
 
 /* ZELLEN GRÖSSEN */
@@ -137,6 +205,10 @@ a {
     grid-column: span 3;
 }
 
+.extralarge {
+    grid-column: span 4;
+}
+
 /* ZELLEN HOVER AUF WEISS */
 
 .block {
@@ -144,7 +216,7 @@ a {
 }
 
 .block:hover {
-    background-color: #ffffff;
+    background-color: rgba(0, 0, 0, 0);
     transition: 0.2s all ease-in-out;
 }
 
@@ -167,11 +239,13 @@ a {
 @media (max-width: 1080px) {
     .grid-container {
         position: absolute;
-        top: 40%;
+        top: 50%;
         left: 60%;
         transform: translate(-50%, -50%) rotate(-45deg) scale(80%);
     }
 }
+
+
 
 /* MEDIA QUERY MOBILE*/
 
@@ -200,13 +274,18 @@ a {
     }
 
     .square2 {
-        transform: translate(133px, 133px);
+        transform: translate(-133px, 133px);
     }
 
     .square3 {
         transform: translate(267px, 0px);
     }
 }
+
+
+
+
+
 
 /* MEDIA QUERY MOBILE KORREKTUR: IPHONE 14 PRO MAX */
 /* Hallo Hanna, meine Seite ist besonders auf das iPhone 14 Pro Max optimiert. */
