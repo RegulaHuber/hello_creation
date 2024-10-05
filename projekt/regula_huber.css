@@ -71,7 +71,7 @@ body {
 
     50% {
         letter-spacing: 8px;
-        font-size: 70px;
+        font-size: 60px;
     }
 
     100% {
@@ -83,7 +83,7 @@ body {
 @keyframes huber {
     0% {
         letter-spacing: 8px;
-        font-size: 70px;
+        font-size: 60px;
     }
 
     50% {
@@ -93,7 +93,7 @@ body {
 
     100% {
         letter-spacing: 8px;
-        font-size: 70px;
+        font-size: 60px;
     }
 }
 
